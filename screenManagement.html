@@ -1,0 +1,553 @@
+<link rel="stylesheet" href="assets/plugins/jstree/dist/themes/default/style.min.css">
+<style>
+    img {
+        width: 100%;
+    }
+    .tree-panel{
+        height: 83vh;
+        overflow-y: scroll;
+    }
+</style>
+
+
+<div class="row">
+    <div class="col-lg-3">
+        <div class="panel panel-inverse" data-sortable-id="tree-view-1">
+            <div class="panel-heading">
+                <div class="panel-heading-btn">
+
+                </div>
+                <h4 class="panel-title">屏幕和图表：</h4>
+            </div>
+            <div class="panel-body tree-panel">
+                <div id="jstree-default">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-9">
+        <!--新建屏幕-->
+        <div class="panel panel-inverse" data-sortable-id="tree-view-1" id="newScreenPanel" style="display:none;">
+            <div class="panel-heading">
+                <div class="panel-heading-btn">
+
+                </div>
+                <h4 class="panel-title">添加屏幕：</h4>
+            </div>
+            <div class="panel-body">
+                <form id="newScreenForm">
+                    <div class="form-group">
+                        <label for="PAGE-PAGE_NAME">屏幕名称：</label>
+                        <input type="text" class="form-control" id="SCREEN-SCREEN_NAME" name="SCREEN_NAME"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="PAGE-SORT">页面轮播间隔（秒）：</label>
+                        <input type="text" class="form-control" id="SCREEN-GAP" name="GAP"/>
+                    </div>
+                </form>
+            </div>
+            <div class="panel-footer text-right">
+                <a href="javascript:;" class="btn btn-white btn-sm"
+                   onclick="$('#modifyScreenPanel').hide();$('#modifyScreenForm')[0].reset()">取消</a>
+                <a href="javascript:;" class="btn btn-success btn-sm m-l-5" onclick="addNewScreen()">保存</a>
+            </div>
+        </div>
+
+        <!--修改页面-->
+        <div class="panel panel-inverse" data-sortable-id="tree-view-1" id="modifyScreenPanel" style="display:none;">
+            <div class="panel-heading">
+                <div class="panel-heading-btn">
+                </div>
+                <h4 class="panel-title">修改屏幕：</h4>
+            </div>
+            <div class="panel-body">
+                <form id="modifyScreenForm">
+                    <div class="form-group">
+                        <label for="PAGE-PAGE_NAME">屏幕名称：</label>
+                        <input type="text" class="form-control" id="MODIFY-SCREEN-SCREEN_NAME" name="SCREEN_NAME"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="PAGE-SORT">页面轮播间隔（秒）：</label>
+                        <input type="text" class="form-control" id="MODIFY-SCREEN-GAP" name="GAP"/>
+                    </div>
+                    <input type="hidden" id="MODIFY-SCREEN-SCREEN_ID" name="SCREEN_ID"/>
+                </form>
+            </div>
+            <div class="panel-footer text-right">
+                <a href="javascript:;" class="btn btn-white btn-sm"
+                   onclick="$('#modifyScreenPanel').hide();$('#modifyScreenForm')[0].reset()">关闭</a>
+                <a href="javascript:;" class="btn btn-success btn-sm m-l-5" onclick="modifyScreen()">保存</a>
+            </div>
+        </div>
+
+        <!--新建页面-->
+        <div class="panel panel-inverse" data-sortable-id="tree-view-1" id="newPagePanel" style="display:none;">
+            <div class="panel-heading">
+                <div class="panel-heading-btn">
+
+                </div>
+                <h4 class="panel-title">添加页面：</h4>
+            </div>
+            <div class="panel-body">
+                <form id="newPageForm">
+                    <div class="form-group">
+                        <label for="PAGE-PAGE_NAME">页面名称：</label>
+                        <input type="text" class="form-control" id="PAGE-PAGE_NAME" name="PAGE_NAME"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="PAGE-SORT">排序：</label>
+                        <input type="text" class="form-control" id="PAGE-SORT" name="SORT"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="PAGE-ROWS">行数：</label>
+                        <select type="text" class="form-control" id="PAGE-ROWS" name="ROWS" onchange="changeExample()">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="PAGE-ROW1_COLUMNS">第一行列数：</label>
+                        <select type="text" class="form-control" id="PAGE-ROW1_COLUMNS" name="ROW1_COLUMNS"
+                                onchange="changeExample()">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="row2-div">
+                        <label for="PAGE-ROW2_COLUMNS">第二行列数：</label>
+                        <select type="text" class="form-control" id="PAGE-ROW2_COLUMNS" name="ROW2_COLUMNS"
+                                onchange="changeExample()">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="row3-div">
+                        <label for="PAGE-ROW3_COLUMNS">第三行列数：</label>
+                        <select type="text" class="form-control" id="PAGE-ROW3_COLUMNS" name="ROW3_COLUMNS"
+                                onchange="changeExample()">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                    <div class="row justify-content-center">
+                        <h4>页面结构图示</h4>
+                    </div>
+                    <div class="row justify-content-center">
+                        <table class="table table-bordered col-6" style="text-align:center">
+                            <tbody id="pageExampleTbody">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <input type="hidden" id="PAGE-SCREEN_ID" name="SCREEN_ID"/>
+                </form>
+            </div>
+            <div class="panel-footer text-right">
+                <a href="javascript:;" class="btn btn-white btn-sm"
+                   onclick="$('#newPagePanel').hide();$('#newPageForm')[0].reset()">取消</a>
+                <a href="javascript:;" class="btn btn-success btn-sm m-l-5" onclick="addNewPage()">保存</a>
+            </div>
+        </div>
+
+        <!--修改页面-->
+        <div class="panel panel-inverse" data-sortable-id="tree-view-1" id="modifyPagePanel" style="display:none;">
+            <div class="panel-heading">
+                <div class="panel-heading-btn">
+                </div>
+                <h4 class="panel-title">修改页面：</h4>
+            </div>
+            <div class="panel-body">
+                <form id="modifyPageForm">
+                    <div class="form-group">
+                        <label for="MODIFY-PAGE-PAGE_NAME">页面名称：</label>
+                        <input type="text" class="form-control" id="MODIFY-PAGE-PAGE_NAME" name="PAGE_NAME"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="MODIFY-PAGE-SORT">排序：</label>
+                        <input type="text" class="form-control" id="MODIFY-PAGE-SORT" name="SORT"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="MODIFY-PAGE-ROWS">行数：</label>
+                        <select type="text" class="form-control" id="MODIFY-PAGE-ROWS" name="ROWS"
+                                onchange="changeExampleForModified()">
+                            <option value="1" selected="selected">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="MODIFY-PAGE-ROW1_COLUMNS">第一行列数：</label>
+                        <select type="text" class="form-control" id="MODIFY-PAGE-ROW1_COLUMNS" name="ROW1_COLUMNS"
+                                onchange="changeExampleForModified()">
+                            <option value="1" selected="selected">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="row2-div-m">
+                        <label for="MODIFY-PAGE-ROW2_COLUMNS">第二行列数：</label>
+                        <select type="text" class="form-control" id="MODIFY-PAGE-ROW2_COLUMNS" name="ROW2_COLUMNS"
+                                onchange="changeExampleForModified()">
+                            <option value="1" selected="selected">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="row3-div-m">
+                        <label for="MODIFY-PAGE-ROW3_COLUMNS">第三行列数：</label>
+                        <select type="text" class="form-control" id="MODIFY-PAGE-ROW3_COLUMNS" name="ROW3_COLUMNS"
+                                onchange="changeExampleForModified()">
+                            <option value="1" selected="selected">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                    <div class="row justify-content-center">
+                        <h4>页面结构图示</h4>
+                    </div>
+                    <div class="row justify-content-center">
+                        <table class="table table-bordered col-6" style="text-align:center">
+                            <tbody id="pageExampleTbodyM">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <input type="hidden" id="MODIFY-PAGE-SCREEN_ID" name="SCREEN_ID"/>
+                    <input type="hidden" id="MODIFY-PAGE-PAGE_ID" name="PAGE_ID"/>
+                </form>
+            </div>
+            <div class="panel-footer text-right">
+                <a href="javascript:;" class="btn btn-white btn-sm"
+                   onclick="$('#modifyPagePanel').hide();$('#modifyPageForm')[0].reset()">关闭</a>
+                <a href="javascript:;" class="btn btn-success btn-sm m-l-5" onclick="modifyPage()">保存</a>
+            </div>
+        </div>
+
+        <!--新建图表-->
+        <div class="panel panel-inverse" data-sortable-id="tree-view-1" id="newChartPanel" style="display:none;">
+            <div class="panel-heading">
+                <div class="panel-heading-btn">
+
+                </div>
+                <h4 class="panel-title">添加图表：</h4>
+            </div>
+            <div class="panel-body">
+                <form id="newChartForm">
+                    <div class="form-group">
+                        <label for="CHART-CHART_ID">图表：</label>
+                        <select type="text" class="form-control" id="CHART-CHART_ID" name="CHART_ID">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="CHART-SORT">排序：</label>
+                        <input type="text" class="form-control" id="CHART-SORT" name="SORT"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="CHART-STYLE">表样：</label>
+                        <select type="text" class="form-control" id="CHART-STYLE" name="STYLE">
+                            <option value="line">折线图</option>
+                            <option value="line-area">折线图（区域）</option>
+                            <option value="bar-vertical">柱状图（纵向）</option>
+                            <option value="bar-horizontal">柱状图（横向）</option>
+                            <option value="bar-vertical-stack">柱状图（纵向堆叠）</option>
+                            <option value="bar-horizontal-stack">柱状图（纵向堆叠）</option>
+                            <option value="pie">饼图</option>
+                            <option value="table">表格</option>
+                            <option value="table-with-title">表格（显示标题）</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="CHART-LINKED_STYLE">摄取指标表样：</label>
+                        <select type="text" class="form-control" id="CHART-LINKED_STYLE" name="LINKED_STYLE">
+                            <option value="line">折线图</option>
+                            <option value="line-area">折线图（区域）</option>
+                            <option value="bar-vertical">柱状图（纵向）</option>
+                            <option value="bar-horizontal">柱状图（横向）</option>
+                            <option value="bar-vertical-stack">柱状图（纵向堆叠）</option>
+                            <option value="bar-horizontal-stack">柱状图（纵向堆叠）</option>
+                            <option value="pie">饼图</option>
+                            <option value="table">表格</option>
+                            <option value="table-with-title">表格（显示标题）</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="CHART-REFRESH_RATE">刷新率（秒）：</label>
+                        <input type="number" class="form-control" id="CHART-REFRESH_RATE" name="REFRESH_RATE"/>
+                    </div>
+                    <input type="hidden" id="CHART-PAGE_ID" name="PAGE_ID"/>
+                </form>
+            </div>
+            <div class="panel-footer text-right">
+                <a href="javascript:;" class="btn btn-white btn-sm"
+                   onclick="$('#newChartPanel').hide();$('#newChartForm')[0].reset()">取消</a>
+                <a href="javascript:;" class="btn btn-success btn-sm m-l-5" onclick="addNewChart()">保存</a>
+            </div>
+        </div>
+
+        <!--修改图表-->
+        <div class="panel panel-inverse" data-sortable-id="tree-view-1" id="modifyChartPanel" style="display:none;">
+            <div class="panel-heading">
+                <div class="panel-heading-btn">
+
+                </div>
+                <h4 class="panel-title">查看图表：</h4>
+            </div>
+            <div class="panel-body">
+                <form id="modifyChartForm">
+                    <div class="form-group">
+                        <label for="MODIFY-CHART-CHART_ID">图表：</label>
+                        <select type="text" class="form-control" id="MODIFY-CHART-CHART_ID" name="CHART_ID">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="MODIFY-CHART-SORT">排序：</label>
+                        <input type="text" class="form-control" id="MODIFY-CHART-SORT" name="SORT"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="MODIFY-CHART-STYLE">表样：</label>
+                        <select type="text" class="form-control" id="MODIFY-CHART-STYLE" name="STYLE">
+                            <option value="line">折线图</option>
+                            <option value="line-area">折线图（区域）</option>
+                            <option value="bar-vertical">柱状图（纵向）</option>
+                            <option value="bar-horizontal">柱状图（横向）</option>
+                            <option value="bar-vertical-stack">柱状图（纵向堆叠）</option>
+                            <option value="bar-horizontal-stack">柱状图（横向堆叠）</option>
+                            <option value="pie">饼图</option>
+                            <option value="table">表格</option>
+                            <option value="table-with-title">表格（显示标题）</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="MODIFY-CHART-LINKED_STYLE">摄取指标表样：</label>
+                        <select type="text" class="form-control" id="MODIFY-CHART-LINKED_STYLE" name="LINKED_STYLE">
+                            <option value="line">折线图</option>
+                            <option value="line-area">折线图（区域）</option>
+                            <option value="bar-vertical">柱状图（纵向）</option>
+                            <option value="bar-horizontal">柱状图（横向）</option>
+                            <option value="bar-vertical-stack">柱状图（纵向堆叠）</option>
+                            <option value="bar-horizontal-stack">柱状图（横向堆叠）</option>
+                            <option value="pie">饼图</option>
+                            <option value="table">表格</option>
+                            <option value="table-with-title">表格（显示标题）</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="MODIFY-CHART-REFRESH_RATE">刷新率（秒）：</label>
+                        <input type="number" class="form-control" id="MODIFY-CHART-REFRESH_RATE" name="REFRESH_RATE"/>
+                    </div>
+                    <input type="hidden" id="MODIFY-CHART-PAGE_ID" name="PAGE_ID"/>
+                    <input type="hidden" id="MODIFY-CHART-PAGE_CHART_ID" name="PAGE_CHART_ID"/>
+                </form>
+            </div>
+            <div class="panel-footer text-right">
+                <a href="javascript:;" class="btn btn-white btn-sm"
+                   onclick="$('#modifyChartPanel').hide();$('#modifyChartForm')[0].reset()">关闭</a>
+                <a href="javascript:;" class="btn btn-success btn-sm m-l-5" onclick="modifyChart()">修改</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="assets/js/screenManagement.js"></script>
+<script src="assets/js/screenManagementScreen.js"></script>
+<script src="assets/js/screenManagementPage.js"></script>
+<script src="assets/js/screenManagementPageChart.js"></script>
+<script>
+    function changeExample() {
+        let rows = parseInt($("#PAGE-ROWS").val());
+        let row1 = parseInt($("#PAGE-ROW1_COLUMNS").val());
+        let row2 = parseInt($("#PAGE-ROW2_COLUMNS").val());
+        let row3 = parseInt($("#PAGE-ROW3_COLUMNS").val());
+
+        let HTML = '';
+        for (let x = 0; x < rows; x++) {
+            console.log(x);
+            HTML += '<tr>';
+            if (x == 0) {
+                switch (row1) {
+                    case 1:
+                        HTML += '<td colspan="12"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        break;
+                    case 2:
+                        HTML += '<td colspan="6"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="6"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        break;
+                    case 3:
+                        HTML += '<td colspan="4"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="4"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="4"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        break;
+                    case 4:
+                        HTML += '<td colspan="3"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="3"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="3"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="3"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        break;
+                }
+            } else if (x == 1) {
+                switch (row2) {
+                    case 1:
+                        HTML += '<td colspan="12"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        break;
+                    case 2:
+                        HTML += '<td colspan="6"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="6"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        break;
+                    case 3:
+                        HTML += '<td colspan="4"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="4"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="4"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        break;
+                    case 4:
+                        HTML += '<td colspan="3"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="3"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="3"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="3"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        break;
+                }
+            } else if (x == 2) {
+                switch (row3) {
+                    case 1:
+                        HTML += '<td colspan="12"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        break;
+                    case 2:
+                        HTML += '<td colspan="6"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="6"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        break;
+                    case 3:
+                        HTML += '<td colspan="4"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="4"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="4"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        break;
+                    case 4:
+                        HTML += '<td colspan="3"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="3"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="3"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="3"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        break;
+                }
+            }
+
+            HTML += '</tr>';
+        }
+        console.log(HTML);
+
+        $("#pageExampleTbody").empty();
+        $("#pageExampleTbody").append(HTML);
+
+        if (rows == 1) {
+            $("#row2-div").hide();
+            $("#row3-div").hide();
+        } else if (rows == 2) {
+            $("#row2-div").show();
+            $("#row3-div").hide();
+        } else if (rows == 3) {
+            $("#row2-div").show();
+            $("#row3-div").show();
+        }
+    }
+
+    function changeExampleForModified() {
+        let rows = parseInt($("#MODIFY-PAGE-ROWS").val());
+        let row1 = parseInt($("#MODIFY-PAGE-ROW1_COLUMNS").val());
+        let row2 = parseInt($("#MODIFY-PAGE-ROW2_COLUMNS").val());
+        let row3 = parseInt($("#MODIFY-PAGE-ROW3_COLUMNS").val());
+
+        let HTML = '';
+        for (let x = 0; x < rows; x++) {
+            console.log(x);
+            HTML += '<tr>';
+            if (x == 0) {
+                switch (row1) {
+                    case 1:
+                        HTML += '<td colspan="12"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        break;
+                    case 2:
+                        HTML += '<td colspan="6"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="6"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        break;
+                    case 3:
+                        HTML += '<td colspan="4"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="4"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="4"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        break;
+                    case 4:
+                        HTML += '<td colspan="3"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="3"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="3"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="3"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        break;
+                }
+            } else if (x == 1) {
+                switch (row2) {
+                    case 1:
+                        HTML += '<td colspan="12"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        break;
+                    case 2:
+                        HTML += '<td colspan="6"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="6"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        break;
+                    case 3:
+                        HTML += '<td colspan="4"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="4"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="4"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        break;
+                    case 4:
+                        HTML += '<td colspan="3"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="3"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="3"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="3"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        break;
+                }
+            } else if (x == 2) {
+                switch (row3) {
+                    case 1:
+                        HTML += '<td colspan="12"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        break;
+                    case 2:
+                        HTML += '<td colspan="6"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="6"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        break;
+                    case 3:
+                        HTML += '<td colspan="4"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="4"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="4"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        break;
+                    case 4:
+                        HTML += '<td colspan="3"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="3"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="3"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        HTML += '<td colspan="3"><i class="fa fa-chart-bar" style="font-size:56px;"></td>';
+                        break;
+                }
+            }
+
+            HTML += '</tr>';
+        }
+        console.log(HTML);
+
+        $("#pageExampleTbodyM").empty();
+        $("#pageExampleTbodyM").append(HTML);
+
+        if (rows == 1) {
+            $("#row2-div-m").hide();
+            $("#row3-div-m").hide();
+        } else if (rows == 2) {
+            $("#row2-div-m").show();
+            $("#row3-div-m").hide();
+        } else if (rows == 3) {
+            $("#row2-div-m").show();
+            $("#row3-div-m").show();
+        }
+    }
+</script>
+

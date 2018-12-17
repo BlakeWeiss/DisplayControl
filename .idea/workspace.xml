@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fff54836-f83a-46be-b364-8654874e7933" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="392">
+              <caret line="62" column="46" lean-forward="true" selection-start-line="62" selection-start-column="46" selection-end-line="62" selection-end-column="46" />
+              <folding>
+                <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/screenManagement.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2277">
+              <caret line="349" column="23" lean-forward="true" selection-start-line="349" selection-start-column="23" selection-end-line="349" selection-end-column="23" />
+              <folding>
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/display.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="512">
+              <caret line="579" column="54" lean-forward="true" selection-start-line="579" selection-start-column="54" selection-end-line="580" selection-end-column="33" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/chartProduction.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="116" column="42" selection-start-line="116" selection-start-column="42" selection-end-line="116" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/js/screenManagementPageChart.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="131" column="1" selection-start-line="131" selection-start-column="1" selection-end-line="131" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/echarts/westeros.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="29" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>content</find>
+      <find>color</find>
+      <find>m-b-5</find>
+      <find>m-b-2</find>
+      <find>EDIT</find>
+      <find>Edit</find>
+      <find>datasetChanged</find>
+      <find>report</find>
+      <find>报表</find>
+      <find>add</find>
+      <find>REPORT</find>
+      <find>Report</find>
+      <find>ScreenChart</find>
+      <find>pageExampleTbody</find>
+      <find>柱状图</find>
+      <find>pageNow</find>
+      <find>assets/plugins/jstree/dist/jstree.min.js</find>
+      <find>../assets</find>
+      <find>result2</find>
+      <find>changeExample</find>
+      <find>.show()</find>
+      <find>default</find>
+      <find>deleteChart</find>
+      <find>vertical</find>
+      <find>table</find>
+      <find>horiz</find>
+      <find>添加页面</find>
+      <find>外链</find>
+      <find>管理员</find>
+      <find>showLinkedChart</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>MODIFY</replace>
+      <replace>Modify</replace>
+      <replace>chart</replace>
+      <replace>图表</replace>
+      <replace>CHART</replace>
+      <replace>Chart</replace>
+      <replace>assets</replace>
+      <replace>摄取</replace>
+      <replace>摄取链接</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>C:\Users\vpkg\Documents\IDMProjects\DisplayControl\assets\css</dir>
+      <dir>C:\Users\vpkg\Documents\IDM-MES\2018-11-18 234834\DisplayControl\views</dir>
+      <dir>C:\IDMProjects\DisplayControl\DisplayControl</dir>
+    </dirStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/template_html_startup/page1.html" />
+        <option value="$PROJECT_DIR$/template_html_startup/page2.html" />
+        <option value="$PROJECT_DIR$/template_html_startup/index.html" />
+        <option value="$PROJECT_DIR$/template_html_startup/reportProduction.html" />
+        <option value="$PROJECT_DIR$/template_html_startup/screenManagement.html" />
+        <option value="$PROJECT_DIR$/template_html_startup/datasetConfig.html" />
+        <option value="$PROJECT_DIR$/views/datasetConfig.html" />
+        <option value="$PROJECT_DIR$/views/reportProduction.html" />
+        <option value="$PROJECT_DIR$/assets/js/screenPage.js" />
+        <option value="$PROJECT_DIR$/assets/js/screenPageReport.js" />
+        <option value="$PROJECT_DIR$/assets/js/screenManagementScreen.js" />
+        <option value="$PROJECT_DIR$/assets/js/screenManagementPageReport.js" />
+        <option value="$PROJECT_DIR$/views/index.html" />
+        <option value="$PROJECT_DIR$/views/screenManagement.html" />
+        <option value="$PROJECT_DIR$/views/display.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/assets/js/screenManagement.js" />
+        <option value="$PROJECT_DIR$/operatingStatus.html" />
+        <option value="$PROJECT_DIR$/assets/js/screenManagementPage.js" />
+        <option value="$PROJECT_DIR$/assets/js/screenManagementPageChart.js" />
+        <option value="$PROJECT_DIR$/demo.html" />
+        <option value="$PROJECT_DIR$/chartProduction.html" />
+        <option value="$PROJECT_DIR$/admin.html" />
+        <option value="$PROJECT_DIR$/screenManagement.html" />
+        <option value="$PROJECT_DIR$/display.html" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="580" />
+    <option name="y" value="200" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="DisplayControl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DisplayControl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DisplayControl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DisplayControl" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\IDMProjects\DisplayControl\DisplayControl\assets\css" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\IDMProjects\DisplayControlXA\DisplayControl\img" />
+      <recent name="C:\IDMProjects\DisplayControl\DisplayControl\img" />
+      <recent name="C:\IDMProjects\DisplayControl\DisplayControl" />
+      <recent name="C:\IDMProjects\DisplayControl\DisplayControl\assets\echarts" />
+      <recent name="C:\Users\vpkg\Documents\IDM-MES\2018-11-18 234834\DisplayControl\views" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/DisplayControl/views/index.html">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fff54836-f83a-46be-b364-8654874e7933" name="Default Changelist" comment="" />
+      <created>1542246424684</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542246424684</updated>
+      <workItem from="1542246425981" duration="11727000" />
+      <workItem from="1542261673711" duration="581000" />
+      <workItem from="1542262283694" duration="1286000" />
+      <workItem from="1542264466869" duration="13004000" />
+      <workItem from="1542330661144" duration="1566000" />
+      <workItem from="1542332355936" duration="2460000" />
+      <workItem from="1542335060642" duration="1025000" />
+      <workItem from="1542337210303" duration="1459000" />
+      <workItem from="1542339348717" duration="3862000" />
+      <workItem from="1542349456081" duration="4742000" />
+      <workItem from="1542466568512" duration="2459000" />
+      <workItem from="1542473949875" duration="2424000" />
+      <workItem from="1542541597232" duration="8834000" />
+      <workItem from="1542592574767" duration="34780000" />
+      <workItem from="1542675225765" duration="25677000" />
+      <workItem from="1542762378986" duration="2828000" />
+      <workItem from="1543800104511" duration="21989000" />
+      <workItem from="1544668753611" duration="14034000" />
+      <workItem from="1544750381694" duration="68000" />
+      <workItem from="1544750492553" duration="4607000" />
+      <workItem from="1544765786657" duration="4960000" />
+      <workItem from="1545009027252" duration="10559000" />
+      <workItem from="1545028724217" duration="9330000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="191062000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18914647" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39949325" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/assets/js/demo/dashboard.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template_html_startup/page2.html" />
+    <entry file="file://$PROJECT_DIR$/template_html_startup/page1.html" />
+    <entry file="file://$PROJECT_DIR$/template_html_startup/index.html" />
+    <entry file="file://$PROJECT_DIR$/template_html_startup/reportProduction.html" />
+    <entry file="file://$PROJECT_DIR$/template_html_startup/screenManagement.html" />
+    <entry file="file://$PROJECT_DIR$/template_html_startup/datasetConfig.html" />
+    <entry file="file://$PROJECT_DIR$/assets/echarts/echarts.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/default/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6750" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/datasetConfig.html" />
+    <entry file="file://$PROJECT_DIR$/views/screenManagementOld.html" />
+    <entry file="file://$PROJECT_DIR$/assets/js/screenManagementScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/chartProduction.html" />
+    <entry file="file://$PROJECT_DIR$/views/display.html" />
+    <entry file="file://$PROJECT_DIR$/views/screenManagement.html" />
+    <entry file="file://$PROJECT_DIR$/views/index.html" />
+    <entry file="file://$PROJECT_DIR$/datasetConfig.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1260" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo.html" />
+    <entry file="file://$PROJECT_DIR$/assets/js/screenManagementPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-297">
+          <caret line="67" column="26" lean-forward="true" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/screenManagement.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="618">
+          <caret line="172" column="22" lean-forward="true" selection-start-line="172" selection-start-column="22" selection-end-line="172" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/operatingStatus.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1992">
+          <caret line="133" column="12" lean-forward="true" selection-start-line="133" selection-start-column="12" selection-end-line="133" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chartProduction.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="116" column="42" selection-start-line="116" selection-start-column="42" selection-end-line="116" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/screenManagementPageChart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="131" column="1" selection-start-line="131" selection-start-column="1" selection-end-line="131" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/echarts/westeros.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="29" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="62" column="46" lean-forward="true" selection-start-line="62" selection-start-column="46" selection-end-line="62" selection-end-column="46" />
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screenManagement.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2277">
+          <caret line="349" column="23" lean-forward="true" selection-start-line="349" selection-start-column="23" selection-end-line="349" selection-end-column="23" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/display.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="579" column="54" lean-forward="true" selection-start-line="579" selection-start-column="54" selection-end-line="580" selection-end-column="33" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

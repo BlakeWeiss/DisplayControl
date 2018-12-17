@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8"/>
+    <title>DISPLAY CONTROL</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"/>
+    <link href="assets/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet"/>
+    <link href="assets/plugins/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="assets/plugins/font-awesome/5.2/css/all.min.css" rel="stylesheet"/>
+    <link href="assets/plugins/animate/animate.min.css" rel="stylesheet"/>
+    <link href="assets/css/default/style.min.css" rel="stylesheet"/>
+    <link href="assets/css/default/style-responsive.min.css" rel="stylesheet"/>
+    <link href="assets/css/default/theme/default.css" rel="stylesheet"/>
+    <!-- ================== END BASE CSS STYLE ================== -->
+
+    <!-- ================== BEGIN BASE JS ================== -->
+    <!--<script src="assets/plugins/pace/pace.min.js"></script>-->
+    <!-- ================== END BASE JS ================== -->
+    <link rel="stylesheet" href="assets/plugins/DataTables/media/css/dataTables.bootstrap4.css">
+    <!--<link rel="stylesheet" href="assets/plugins/DataTables/media/css/jquery.dataTables.css">-->
+    <style>
+        body {
+            font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "SimSun";
+            background-color: white;
+        }
+
+        xtitle {
+            font-size: 36px;
+        }
+    </style>
+</head>
+<body style="background: linear-gradient(#15326c, #0e151b);">
+<!-- begin #page-loader -->
+<div id="page-loader" class="fade show"><span class="spinner"></span></div>
+<!-- end #page-loader -->
+
+<div class="">
+    <svg width="1900px" height="1060px" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="4" orient="auto"
+                    markerUnits="strokeWidth">
+                <path d="M0,0 L0,8 L9,4 z" fill="#14bef5"></path>
+            </marker>
+        </defs>
+        <!--标题-->
+        <text x="750" y="70" fill="#41dbf2" style="font-size:33px;">XX品种产线运行状态</text>
+
+        <!--工序一-->
+        <rect x="145" y="380" width="150" height="44" fill="#2591f6"></rect>
+        <text x="190" y="410" fill="white" style="font-size:20px">工序一</text>
+        <text x="160" y="520" fill="#41dbf2" style="font-size:20px">J98胶印机1#</text>
+
+        <!--工序一和工序二的连接线-->
+        <g fill="none" stroke="#14bef5" stroke-width="1">
+            <path stroke-dasharray="5,5" d="M297 400 L500 400"/>
+            <path stroke-dasharray="5,5" d="M297 405 L500 405"/>
+        </g>
+
+        <!--工序二-->
+        <rect x="495" y="380" width="150" height="44" fill="#2591f6"></rect>
+        <text x="540" y="410" fill="white" style="font-size:20px">工序二</text>
+        <text x="510" y="520" fill="#41dbf2" style="font-size:20px" id="j981">J98胶印机1#</text>
+
+        <!--工序二和工序三的连接线-->
+        <g fill="none" stroke="#14bef5" stroke-width="1">
+            <path stroke-dasharray="5,5" d="M647 400 L850 400"/>
+            <path stroke-dasharray="5,5" d="M647 405 L850 405"/>
+        </g>
+
+        <!--工序三-->
+        <rect x="845" y="380" width="150" height="44" fill="#2591f6"></rect>
+        <text x="890" y="410" fill="white" style="font-size:20px">工序三</text>
+        <text x="860" y="520" fill="#41dbf2" style="font-size:20px">J98胶印机1#</text>
+
+        <!--工序三和工序四五的连接线-->
+        <g fill="none" stroke="#14bef5" stroke-width="1">
+            <path stroke-dasharray="5,5" d="M997 400 L1150 400"/>
+            <path stroke-dasharray="5,5" d="M997 405 L1150 405"/>
+        </g>
+
+        <!--工序四五的矩形虚线-->
+        <g fill="none" stroke="#14bef5" stroke-width="1">
+            <path stroke-dasharray="5,5" d="M1150 230 L1150 550"/>
+            <path stroke-dasharray="5,5" d="M1160 240 L1160 540"/>
+
+            <path stroke-dasharray="5,5" d="M1480 240 L1480 540"/>
+            <path stroke-dasharray="5,5" d="M1490 230 L1490 550"/>
+
+            <path stroke-dasharray="5,5" d="M1150 230 L1490 230"/>
+            <path stroke-dasharray="5,5" d="M1160 240 L1480 240"/>
+
+            <path stroke-dasharray="5,5" d="M1160 540 L1480 540"/>
+            <path stroke-dasharray="5,5" d="M1150 550 L1490 550"/>
+        </g>
+
+        <!--工序四五和工序六的连接线-->
+        <g fill="none" stroke="#14bef5" stroke-width="1">
+            <path stroke-dasharray="5,5" d="M1490 400 L1740 400"/>
+            <path stroke-dasharray="5,5" d="M1490 405 L1740 405"/>
+        </g>
+
+        <!--工序四-->
+        <rect x="1245" y="210" width="150" height="44" fill="#2591f6"></rect>
+        <text x="1290" y="240" fill="white" style="font-size:20px">工序四</text>
+        <text x="1260" y="340" fill="#41dbf2" style="font-size:20px">J98胶印机1#</text>
+
+        <!--工序五-->
+        <rect x="1245" y="520" width="150" height="44" fill="#2591f6"></rect>
+        <text x="1290" y="550" fill="white" style="font-size:20px">工序五</text>
+        <text x="1260" y="630" fill="#41dbf2" style="font-size:20px">J98胶印机1#</text>
+
+        <!--工序六-->
+        <rect x="1595" y="380" width="150" height="44" fill="#2591f6"></rect>
+        <text x="1640" y="410" fill="white" style="font-size:20px">工序六</text>
+        <text x="1610" y="520" fill="#41dbf2" style="font-size:20px">J98胶印机1#</text>
+
+        <!--胶印机图片和连接线部分-->
+        <g>
+            <image xlink:href="img/machine.png" x="110" y="490" height="220" width="220">
+            </image>
+            <image xlink:href="img/greenlight.png" x="130" y="640" height="30" width="30">
+            </image>
+            <image xlink:href="img/greenlight.png" x="160" y="640" height="30" width="30">
+            </image>
+        </g>
+        <g fill="none" stroke="#14bef5" stroke-width="1">
+            <path stroke-dasharray="5,5" d="M320 600 L370 600 L370 850" marker-end="url(#arrow)"/>
+        </g>
+
+        <g fill="none" stroke="#14bef5" stroke-width="1">
+            <path stroke-dasharray="5,5" d="M420 850 L420 600 L470 600" marker-end="url(#arrow)"/>
+        </g>
+        <g>
+            <image xlink:href="img/machine.png" x="460" y="490" height="220" width="220">
+            </image>
+            <image xlink:href="img/greenlight.png" x="480" y="640" height="30" width="30">
+            </image>
+            <image xlink:href="img/greenlight.png" x="510" y="640" height="30" width="30">
+            </image>
+            <image xlink:href="img/redlight.png" x="540" y="640" height="30" width="30">
+            </image>
+            <image xlink:href="img/greenlight.png" x="570" y="640" height="30" width="30">
+            </image>
+        </g>
+        <g fill="none" stroke="#14bef5" stroke-width="1">
+            <path stroke-dasharray="5,5" d="M670 600 L720 600 L720 850" marker-end="url(#arrow)"/>
+        </g>
+        <g fill="none" stroke="#14bef5" stroke-width="1">
+            <path stroke-dasharray="5,5" d="M770 850 L770 600 L820 600" marker-end="url(#arrow)"/>
+        </g>
+        <g>
+            <image xlink:href="img/machine.png" x="810" y="490" height="220" width="220">
+            </image>
+            <image xlink:href="img/greenlight.png" x="830" y="640" height="30" width="30">
+            </image>
+            <image xlink:href="img/greenlight.png" x="860" y="640" height="30" width="30">
+            </image>
+            <image xlink:href="img/redlight.png" x="890" y="640" height="30" width="30">
+            </image>
+        </g>
+        <g fill="none" stroke="#14bef5" stroke-width="1">
+            <path stroke-dasharray="5,5" d="M1020 600 L1070 600 L1070 850" marker-end="url(#arrow)"/>
+        </g>
+        <g fill="none" stroke="#14bef5" stroke-width="1">
+            <path stroke-dasharray="5,5" d="M1120 850 L1120 410 L1220 410" marker-end="url(#arrow)"/>
+        </g>
+        <g>
+            <image xlink:href="img/machine.png" x="1210" y="300" height="220" width="220">
+            </image>
+            <image xlink:href="img/greenlight.png" x="1230" y="450" height="30" width="30">
+            </image>
+            <image xlink:href="img/greenlight.png" x="1260" y="450" height="30" width="30">
+            </image>
+            <image xlink:href="img/greenlight.png" x="1290" y="450" height="30" width="30">
+            </image>
+        </g>
+        <g fill="none" stroke="#14bef5" stroke-width="1">
+            <path stroke-dasharray="5,5" d="M1170 850 L1170 700 L1220 700" marker-end="url(#arrow)"/>
+        </g>
+        <g>
+            <image xlink:href="img/machine.png" x="1210" y="590" height="220" width="220">
+            </image>
+            <image xlink:href="img/greenlight.png" x="1230" y="740" height="30" width="30">
+            </image>
+            <image xlink:href="img/greenlight.png" x="1260" y="740" height="30" width="30">
+            </image>
+            <image xlink:href="img/greenlight.png" x="1290" y="740" height="30" width="30">
+            </image>
+        </g>
+        <g fill="none" stroke="#14bef5" stroke-width="1">
+            <path stroke-dasharray="5,5" d="M1420 700 L1470 700 L1470 850" marker-end="url(#arrow)"/>
+        </g>
+        <g fill="none" stroke="#14bef5" stroke-width="1">
+            <path stroke-dasharray="5,5" d="M1520 850 L1520 600 L1570 600" marker-end="url(#arrow)"/>
+        </g>
+        <g>
+            <image xlink:href="img/machine.png" x="1560" y="490" height="220" width="220">
+            </image>
+            <image xlink:href="img/greenlight.png" x="1580" y="640" height="30" width="30">
+            </image>
+            <image xlink:href="img/greenlight.png" x="1610" y="640" height="30" width="30">
+            </image>
+            <image xlink:href="img/yellowlight.png" x="1640" y="640" height="30" width="30">
+            </image>
+        </g>
+
+
+        <!--矩形-->
+        <g fill="none" stroke="#698fb3" stroke-width="1">
+            <path stroke-width="1" d="M130 870 L1760 870 L1760 1000 L130 1000 z" style="fill:#2591f6;fill-opacity:0.1"/>
+        </g>
+
+        <!--立体库-->
+        <text x="160" y="910" fill="#14bef5" style="font-size:22px;font-weight:bold">立</text>
+        <text x="160" y="940" fill="#14bef5" style="font-size:22px;font-weight:bold">体</text>
+        <text x="160" y="970" fill="#14bef5" style="font-size:22px;font-weight:bold">库</text>
+
+        <!--矩形内文字-->
+        <!--第一组-->
+        <text x="320" y="915" fill="white" style="font-size:22px">可用：</text>
+        <text x="390" y="915" fill="#41dbf2" style="font-size:22px">256万</text>
+        <text x="300" y="965" fill="white" style="font-size:22px">总库存：</text>
+        <text x="390" y="965" fill="#41dbf2" style="font-size:22px">256万</text>
+
+        <!--第二组-->
+        <text x="670" y="915" fill="white" style="font-size:22px">可用：</text>
+        <text x="740" y="915" fill="#41dbf2" style="font-size:22px">256万</text>
+        <text x="650" y="965" fill="white" style="font-size:22px">总库存：</text>
+        <text x="740" y="965" fill="#41dbf2" style="font-size:22px">256万</text>
+
+
+        <!--第三组-->
+        <text x="1050" y="915" fill="white" style="font-size:22px">可用：</text>
+        <text x="1120" y="915" fill="#41dbf2" style="font-size:22px">256万</text>
+        <text x="1030" y="965" fill="white" style="font-size:22px">总库存：</text>
+        <text x="1120" y="965" fill="#41dbf2" style="font-size:22px">256万</text>
+
+
+        <!--第四组-->
+        <text x="1420" y="915" fill="white" style="font-size:22px">可用：</text>
+        <text x="1490" y="915" fill="#41dbf2" style="font-size:22px">256万</text>
+        <text x="1400" y="965" fill="white" style="font-size:22px">总库存：</text>
+        <text x="1490" y="965" fill="#41dbf2" style="font-size:22px">256万</text>
+
+        <!--移动的小车-->
+        <image xlink:href="img/agv.png" x="300" y="490" height="30" width="30" id="car1">
+            <animateMotion path="M10 90 L60 90 L60 330" begin="0s" dur="3s" repeatCount="indefinite"/>
+        </image>
+
+        <image xlink:href="img/agv.png" x="400" y="490" height="30" width="30">
+            <animateMotion path="M10 330 L10 90 L60 90" begin="0s" dur="3s" repeatCount="indefinite"/>
+        </image>
+
+        <image xlink:href="img/agv.png" x="650" y="490" height="30" width="30">
+            <animateMotion path="M10 90 L60 90 L60 330" begin="0s" dur="3s" repeatCount="indefinite"/>
+        </image>
+
+        <image xlink:href="img/agv.png" x="750" y="490" height="30" width="30">
+            <animateMotion path="M10 330 L10 90 L60 90" begin="0s" dur="3s" repeatCount="indefinite"/>
+        </image>
+
+        <image xlink:href="img/agv.png" x="1000" y="490" height="30" width="30">
+            <animateMotion path="M10 90 L60 90 L60 330" begin="0s" dur="3s" repeatCount="indefinite"/>
+        </image>
+
+        <image xlink:href="img/agv.png" x="1100" y="300" height="30" width="30">
+            <animateMotion path="M10 530 L10 90 L100 90" begin="0s" dur="3s" repeatCount="indefinite"/>
+        </image>
+
+        <image xlink:href="img/agv.png" x="1150" y="490" height="30" width="30">
+            <animateMotion path="M10 330 L10 190 L60 190" begin="0s" dur="3s" repeatCount="indefinite"/>
+        </image>
+
+        <image xlink:href="img/agv.png" x="1400" y="490" height="30" width="30">
+            <animateMotion path="M10 190 L60 190 L60 330" begin="0s" dur="3s" repeatCount="indefinite"/>
+        </image>
+
+        <image xlink:href="img/agv.png" x="1500" y="490" height="30" width="30">
+            <animateMotion path="M10 330 L10 90 L60 90" begin="0s" dur="3s" repeatCount="indefinite"/>
+        </image>
+    </svg>
+</div>
+
+
+<!-- ================== BEGIN BASE JS ================== -->
+<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+<script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="assets/plugins/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+<!--[if lt IE 9]>
+<script src="assets/crossbrowserjs/html5shiv.js"></script>
+<script src="assets/crossbrowserjs/respond.min.js"></script>
+<script src="assets/crossbrowserjs/excanvas.min.js"></script>
+<![endif]-->
+<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="assets/plugins/js-cookie/js.cookie.js"></script>
+<script src="assets/js/theme/default.min.js"></script>
+<script src="assets/js/apps.min.js"></script>
+<!-- ================== END BASE JS ================== -->
+<script src="assets/plugins/DataTables/media/js/jquery.dataTables.js"></script>
+<script src="assets/plugins/DataTables/media/js/dataTables.bootstrap4.js"></script>
+
+<script>
+    $(document).ready(function () {
+        App.init();
+
+
+    });
+</script>
+
+</body>

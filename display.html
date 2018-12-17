@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8"/>
+    <title>DISPLAY CONTROL</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"/>
+    <link href="assets/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet"/>
+    <link href="assets/plugins/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="assets/plugins/font-awesome/5.2/css/all.min.css" rel="stylesheet"/>
+    <link href="assets/plugins/animate/animate.min.css" rel="stylesheet"/>
+    <link href="assets/css/default/style.min.css" rel="stylesheet"/>
+    <link href="assets/css/default/style-responsive.min.css" rel="stylesheet"/>
+    <link href="assets/css/default/theme/default.css" rel="stylesheet"/>
+    <!-- ================== END BASE CSS STYLE ================== -->
+
+    <!-- ================== BEGIN BASE JS ================== -->
+    <!--<script src="assets/plugins/pace/pace.min.js"></script>-->
+    <!-- ================== END BASE JS ================== -->
+    <link rel="stylesheet" href="assets/plugins/DataTables/media/css/dataTables.bootstrap4.css">
+    <!--<link rel="stylesheet" href="assets/plugins/DataTables/media/css/jquery.dataTables.css">-->
+    <style>
+        *, #maintable_previous > a, #maintable_next > a, #maintable_paginate > ul > li.paginate_button.page-item.active > a {
+            border-radius: 0px !important;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "SimSun";
+            background-color: white;
+        }
+
+        canvas {
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        .echarts-div > div:nth-child(1) {
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        .modal-95 {
+            max-width: 95vw;
+        }
+
+        #linkedChart, #linkedTable {
+            height: 85vh;
+            width: 93vw;
+        }
+
+        .row {
+            margin: 0;
+        }
+
+        .container-fluid {
+            padding: 0px;
+        }
+    </style>
+</head>
+<body style="background:#eee">
+<!-- begin #page-loader -->
+<div id="page-loader" class="fade show"><span class="spinner"></span></div>
+<!-- end #page-loader -->
+
+
+<!--选择屏幕页面-->
+<div class="container" id="screen-selector">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <!-- begin widget-list -->
+            <div class="m-b-10 f-s-10 m-t-10">
+                <b class="text-inverse">请选择要显示的屏幕</b>
+            </div>
+            <div class="widget-list widget-list-rounded m-b-30" data-id="widget" id="screen-list">
+            </div>
+            <!-- end widget-list -->
+        </div>
+    </div>
+</div>
+
+<!-- begin #page-container -->
+<div class="container-fluid" id="main" style="height:100vh;">
+
+</div>
+<!-- end page container -->
+
+<!-- 外链指标图表 -->
+<div class="modal fade" id="linkedChartModal" tabindex="-1" role="dialog" aria-labelledby="linkedChartModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-95" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="linkedChartModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="" id="linkedChart">
+
+                </div>
+            </div>
+            <div class="modal-footer" style="display:none;">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 外链指标表格 -->
+<div class="modal fade" id="linkedTableModal" tabindex="-1" role="dialog" aria-labelledby="linkedChartModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-95" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="linkedTableModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="" id="linkedTable">
+
+                </div>
+            </div>
+            <div class="modal-footer" style="display:none;">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ================== BEGIN BASE JS ================== -->
+<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+<script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="assets/plugins/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+<!--[if lt IE 9]>
+<script src="assets/crossbrowserjs/html5shiv.js"></script>
+<script src="assets/crossbrowserjs/respond.min.js"></script>
+<script src="assets/crossbrowserjs/excanvas.min.js"></script>
+<![endif]-->
+<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="assets/plugins/js-cookie/js.cookie.js"></script>
+<script src="assets/js/theme/default.min.js"></script>
+<script src="assets/js/apps.min.js"></script>
+<!-- ================== END BASE JS ================== -->
+<script src="assets/plugins/DataTables/media/js/jquery.dataTables.js"></script>
+<script src="assets/plugins/DataTables/media/js/dataTables.bootstrap4.js"></script>
+<script src="assets/echarts/echarts.min.js"></script>
+<script src="assets/echarts/westeros.js"></script>
+<script>
+    let URL = 'http://localhost:3849';
+
+    (function ($) {
+        $.getUrlParam = function (name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = decodeURI(window.location.search).substr(1).match(reg); //匹配目标参数
+            if (r != null) return unescape(r[2]);
+            return null; //返回参数值
+        }
+    })(jQuery);
+
+    $(document).ready(function () {
+        App.init();
+
+        //从URL读取这是屏幕几
+        let screenName = $.getUrlParam('s');
+        //console.log(screenName);
+        //如果没有指定屏幕参数s，则列出所以屏幕在页面上
+        if (screenName == null) {
+            loadDisplayList();
+        } else {
+            loadPages(screenName);
+        }
+
+    });
+</script>
+
+<script>
+    //获取所有屏幕
+    function loadDisplayList() {
+        $.post(URL + "/Display/LoadScreenList", null, function (data) {
+            let obj = JSON.parse(data);
+            switch (obj[0]) {
+                case '1':
+                    var result = JSON.parse(obj[1]);
+                    var HTML = '';
+                    for (x in result) {
+                        HTML += '<a href="javascript:loadPages(\'' + result[x].SCREEN_NAME + '\');" class="widget-list-item">';
+                        HTML += '<div class="widget-list-media icon">';
+                        HTML += '<i class="fa fa-tv bg-inverse text-white"></i>';
+                        HTML += '</div>';
+                        HTML += '<div class="widget-list-content">';
+                        HTML += '<h4 class="widget-list-title">' + result[x].SCREEN_NAME + '</h4>';
+                        HTML += '</div>';
+                        HTML += '<div class="widget-list-action text-nowrap text-grey-darker">';
+                        HTML += '<i class="fa fa-angle-right fa-lg m-l-5 text-muted t-plus-1"></i>';
+                        HTML += '</div>';
+                        HTML += '</a>';
+                    }
+                    $("#screen-list").html(HTML);
+                    break;
+                default:
+                    break;
+            }
+        })
+    }
+
+    let pageArray = [];
+
+    let mainHTML = '';
+    let gap = 20; //切换页面间隔
+    let pageCount = 0;
+    let pageNow = -1;
+
+    //存放该屏幕所有页面和图表的集合
+    let chartsOfPages = [];
+
+
+    //获取该屏幕的页面
+    function loadPages(SCREEN_NAME) {
+        $("#screen-selector").hide();
+        //$("body").css('background-color', '#144160');
+        $("body").css('background', 'linear-gradient(#15326c, #0e151b)');
+
+        $.post(URL + "/Display/LoadScreen", {SCREEN_NAME: SCREEN_NAME}, function (data) {
+            let obj = JSON.parse(data);
+            switch (obj[0]) {
+                case '1':
+                    //查找该屏幕下都有哪些需要轮换的页面
+                    let result = JSON.parse(obj[1]);
+                    //查找该页面下都有哪些图表
+                    let result2 = JSON.parse(obj[2]);
+                    // console.log(result);
+                    // console.log(result2);
+                    pageArray = result; //该屏幕页面队列
+                    for (let x = 0; x < result.length; x++) {
+
+                        let pageCharts = [];
+
+
+                        //console.log(result[x]);
+                        //获取该页面有几行，每行有几列
+                        let rows = result[x].ROWS;
+                        let row1 = result[x].ROW1_COLUMNS;
+                        let row2 = result[x].ROW2_COLUMNS;
+                        let row3 = result[x].ROW3_COLUMNS;
+                        let colArray = [];
+                        switch (row1) {
+                            case 1:
+                                colArray.push(12);
+                                break;
+                            case 2:
+                                colArray.push(6);
+                                colArray.push(6);
+                                break;
+                            case 3:
+                                colArray.push(4);
+                                colArray.push(4);
+                                colArray.push(4);
+                                break;
+                            case 4:
+                                colArray.push(3);
+                                colArray.push(3);
+                                colArray.push(3);
+                                colArray.push(3);
+                                break;
+                        }
+                        if (rows == 2) {
+                            switch (row2) {
+                                case 1:
+                                    colArray.push(12);
+                                    break;
+                                case 2:
+                                    colArray.push(6);
+                                    colArray.push(6);
+                                    break;
+                                case 3:
+                                    colArray.push(4);
+                                    colArray.push(4);
+                                    colArray.push(4);
+                                    break;
+                                case 4:
+                                    colArray.push(3);
+                                    colArray.push(3);
+                                    colArray.push(3);
+                                    colArray.push(3);
+                                    break;
+                            }
+                        }
+                        if (rows == 3) {
+                            switch (row2) {
+                                case 1:
+                                    colArray.push(12);
+                                    break;
+                                case 2:
+                                    colArray.push(6);
+                                    colArray.push(6);
+                                    break;
+                                case 3:
+                                    colArray.push(4);
+                                    colArray.push(4);
+                                    colArray.push(4);
+                                    break;
+                                case 4:
+                                    colArray.push(3);
+                                    colArray.push(3);
+                                    colArray.push(3);
+                                    colArray.push(3);
+                                    break;
+                            }
+                            switch (row3) {
+                                case 1:
+                                    colArray.push(12);
+                                    break;
+                                case 2:
+                                    colArray.push(6);
+                                    colArray.push(6);
+                                    break;
+                                case 3:
+                                    colArray.push(4);
+                                    colArray.push(4);
+                                    colArray.push(4);
+                                    break;
+                                case 4:
+                                    colArray.push(3);
+                                    colArray.push(3);
+                                    colArray.push(3);
+                                    colArray.push(3);
+                                    break;
+                            }
+                        }
+
+
+                        //获取该页面所有图表
+                        for (let y = 0; y < result2.length; y++) {
+                            if (result[x].PAGE_ID == result2[y].PAGE_ID) {
+                                pageCharts.push(result2[y]);
+
+                            }
+                        }
+
+                        console.log(pageCharts);
+                        console.log(colArray);
+
+                        //画每个页面的表结构
+                        let HTML = '';
+                        if (rows == 1) {
+                            HTML = '<div class="row animated slower delay-2s" id="' + x + '" style="display:none;height:100vh">';
+                            for (let z in colArray) {
+                                //console.log(pageCharts.length-1 + '>=' + z);
+                                //console.log(pageCharts.length-1 >= z);
+                                if (pageCharts.length - 1 >= z) {
+                                    switch (colArray[z]) {
+                                        case 12:
+                                            HTML += '<div class="echarts-div" style="height:100vh;width:100vw" onclick="showLinkedChart(\'' + pageCharts[z].PAGE_CHART_ID + '\')" id="chart_' + pageCharts[z].PAGE_CHART_ID + '"><h1>' + pageCharts[z].CHART_NAME + '</h1></div>';
+                                            break;
+                                        case 6:
+                                            HTML += '<div class="echarts-div" style="height:100vh;width:49.5vw" onclick="showLinkedChart(\'' + pageCharts[z].PAGE_CHART_ID + '\')" id="chart_' + pageCharts[z].PAGE_CHART_ID + '"><h1>' + pageCharts[z].CHART_NAME + '</h1></div>';
+                                            break;
+                                        case 4:
+                                            HTML += '<div class="echarts-div" style="height:100vh;width:33vw;" onclick="showLinkedChart(\'' + pageCharts[z].PAGE_CHART_ID + '\')" id="chart_' + pageCharts[z].PAGE_CHART_ID + '"><h1>' + pageCharts[z].CHART_NAME + '</h1></div>';
+                                            break;
+                                        case 3:
+                                            HTML += '<div class="echarts-div" style="height:100vh;width:24.5vw;" onclick="showLinkedChart(\'' + pageCharts[z].PAGE_CHART_ID + '\')" id="chart_' + pageCharts[z].PAGE_CHART_ID + '"><h1>' + pageCharts[z].CHART_NAME + '</h1></div>';
+                                            break;
+                                    }
+                                }
+                            }
+                        } else if (rows == 2) {
+                            HTML = '<div class="row animated slower delay-2s" id="' + x + '" style="display:none;height:50vh">';
+                            for (let z in colArray) {
+                                //console.log(pageCharts.length-1 + '>=' + z);
+                                //console.log(pageCharts.length-1 >= z);
+                                if (pageCharts.length - 1 >= z) {
+                                    switch (colArray[z]) {
+                                        case 12:
+                                            HTML += '<div class="echarts-div" style="height:50vh;width:100vw" onclick="showLinkedChart(\'' + pageCharts[z].PAGE_CHART_ID + '\')" id="chart_' + pageCharts[z].PAGE_CHART_ID + '"><h1>' + pageCharts[z].CHART_NAME + '</h1></div>';
+                                            break;
+                                        case 6:
+                                            HTML += '<div class="echarts-div" style="height:50vh;width:49vw" onclick="showLinkedChart(\'' + pageCharts[z].PAGE_CHART_ID + '\')" id="chart_' + pageCharts[z].PAGE_CHART_ID + '"><h1>' + pageCharts[z].CHART_NAME + '</h1></div>';
+                                            break;
+                                        case 4:
+                                            HTML += '<div class="echarts-div" style="height:50vh;width:33vw;" onclick="showLinkedChart(\'' + pageCharts[z].PAGE_CHART_ID + '\')" id="chart_' + pageCharts[z].PAGE_CHART_ID + '"><h1>' + pageCharts[z].CHART_NAME + '</h1></div>';
+                                            break;
+                                        case 3:
+                                            HTML += '<div class="echarts-div" style="height:50vh;width:24.5vw;" onclick="showLinkedChart(\'' + pageCharts[z].PAGE_CHART_ID + '\')" id="chart_' + pageCharts[z].PAGE_CHART_ID + '"><h1>' + pageCharts[z].CHART_NAME + '</h1></div>';
+                                            break;
+                                    }
+                                }
+                            }
+                        } else if (rows == 3) {
+                            HTML = '<div class="row animated slower delay-2s" id="' + x + '" style="display:none;height:33.3vh">';
+                            for (let z in colArray) {
+                                //console.log(pageCharts.length-1 + '>=' + z);
+                                //console.log(pageCharts.length-1 >= z);
+                                if (pageCharts.length - 1 >= z) {
+                                    switch (colArray[z]) {
+                                        case 12:
+                                            HTML += '<div class="echarts-div" style="height:33.3vh;width:100vw" onclick="showLinkedChart(\'' + pageCharts[z].PAGE_CHART_ID + '\')" id="chart_' + pageCharts[z].PAGE_CHART_ID + '"><h1>' + pageCharts[z].CHART_NAME + '</h1></div>';
+                                            break;
+                                        case 6:
+                                            HTML += '<div class="echarts-div" style="height:33.3vh;width:49vw" onclick="showLinkedChart(\'' + pageCharts[z].PAGE_CHART_ID + '\')" id="chart_' + pageCharts[z].PAGE_CHART_ID + '"><h1>' + pageCharts[z].CHART_NAME + '</h1></div>';
+                                            break;
+                                        case 4:showLinkedChart
+                                            HTML += '<div class="echarts-div" style="height:33.3vh;width:33vw;" onclick="showLinkedChart(\'' + pageCharts[z].PAGE_CHART_ID + '\')" id="chart_' + pageCharts[z].PAGE_CHART_ID + '"><h1>' + pageCharts[z].CHART_NAME + '</h1></div>';
+                                            break;
+                                        case 3:
+                                            HTML += '<div class="echarts-div" style="height:33.3vh;width:24.5vw;" onclick="showLinkedChart(\'' + pageCharts[z].PAGE_CHART_ID + '\')" id="chart_' + pageCharts[z].PAGE_CHART_ID + '"><h1>' + pageCharts[z].CHART_NAME + '</h1></div>';
+                                            break;
+                                    }
+                                }
+                            }
+                        }
+                        HTML += '</div>';
+
+                        //添加到页面
+                        mainHTML += HTML;
+                        chartsOfPages.push(pageCharts);
+                    }
+
+                    $("#main").html(mainHTML);
+                    console.log(mainHTML);
+
+                    if (result.length > 0) {
+                        gap = result[0].GAP;
+                        pageCount = result.length;
+
+                        //开始渲染图表
+                        enginePrepare();
+                        //开始切换
+                        engineStart();
+                    }
+                    break;
+                default:
+                    break;
+            }
+        })
+    }
+
+    //开始渲染图表
+    function enginePrepare() {
+        console.log(chartsOfPages);
+        //遍历页面中的每个图表
+        for (let i = 0; i < chartsOfPages.length; i++) {
+            for (let j = 0; j < chartsOfPages[i].length; j++) {
+                console.log(chartsOfPages[i][j].REFRESH_RATE);
+
+                let refreshRate = parseInt(chartsOfPages[i][j].REFRESH_RATE); //默认十分钟刷新一次
+                if (refreshRate == "NaN") {
+                    refreshRate = 10 * 60 * 1000;
+                } else {
+                    refreshRate = refreshRate * 1000;
+                }
+
+                setChart(chartsOfPages[i][j]);
+                setInterval(function () {
+                    setChart(chartsOfPages[i][j])
+                }, refreshRate);
+
+            }
+        }
+    }
+
+    //获取要显示的数据并设置在图表上
+    function setChart(chartsOfPagesij) {
+        let chart = echarts.init(document.getElementById('chart_' + chartsOfPagesij.PAGE_CHART_ID), 'westeros');
+        //获取要显示的数据
+        $.post(URL + "/Display/Echarts", {PAGE_CHART_ID: chartsOfPagesij.PAGE_CHART_ID}, function (data) {
+            let obj = JSON.parse(data);
+            switch (obj[0]) {
+                case '1':
+                    let dic = obj[1];
+                    let listXAxisData = dic.listXAxisData;
+                    let xAxisName = dic.xAxisName;
+                    let legendName = dic.legendName;
+                    let series = dic.series;
+                    let seriesType = dic.seriesType;
+                    let pieData = dic.pieData;
+
+                    switch (seriesType) {
+                        case 'pie':
+                            chart.setOption({
+                                title: {
+                                    text: chartsOfPagesij.CHART_NAME,
+                                    x: 'center',
+                                    top: '10%',
+                                    textStyle: {
+                                        color: '#FFFFFF'
+                                    }
+                                },
+                                tooltip: {
+                                    trigger: 'item',
+                                    formatter: "{a} <br/>{b} : {c}",
+                                },
+                                legend: {
+                                    orient: 'vertical',
+                                    left: '5%',
+                                    data: listXAxisData
+                                },
+                                // series: series
+                                series: [
+                                    {
+                                        name: chartsOfPagesij.CHART_NAME,
+                                        type: 'pie',
+                                        radius: '55%',
+                                        center: ['50%', '60%'],
+                                        data: pieData,
+                                        itemStyle: {
+                                            emphasis: {
+                                                shadowBlur: 10,
+                                                shadowOffsetX: 0,
+                                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                            }
+                                        }
+                                    }
+                                ],
+                                color: ["#2194CD", "#E39A56", "#8F9CBC", "#93b7e3", "#a5e7f0", "#cbb0e3"],
+                            });
+                            break;
+                        case 'table':
+                            let tableHTML = '';
+                            tableHTML += '<div style="overflow-x:auto;padding: 20px;">';
+                            tableHTML += '<table class="table table-bordered" style="background-color:#0D4C75;color:#CFD8E0 !important">';
+                            tableHTML += '<thead>';
+                            tableHTML += '<tr>';
+                            tableHTML += '<th style="color:white">' + xAxisName + '</th>';
+                            for (let th = 0; th < legendName.length; th++) {
+                                tableHTML += '<th style="color:white">';
+                                tableHTML += legendName[th];
+                                tableHTML += '</th>';
+                            }
+                            tableHTML += '</tr>';
+                            tableHTML += '</thead>';
+                            tableHTML += '<tbody>';
+                            for (let row = 0; row < listXAxisData.length; row++) {
+                                tableHTML += '<tr>'
+                                tableHTML += '<td>' + listXAxisData[row] + '</td>';
+                                for (let column = 0; column < legendName.length; column++) {
+                                    tableHTML += '<td>' + series[column].data[row] + '</td>';
+                                }
+                                tableHTML += '</tr>';
+                            }
+                            tableHTML += '</tbody>';
+                            tableHTML += '</table>';
+                            tableHTML += '</div>';
+                            $('#chart_' + chartsOfPagesij.PAGE_CHART_ID).html(tableHTML);
+                            break;
+                        case 'table-with-title':
+                            let tableWithTitleHTML = '';
+                            tableWithTitleHTML += '<div style="overflow-x:auto;padding: 20px;">';
+                            tableWithTitleHTML += '<div style="text-align: center;"><h2 style="color:white">'+chartsOfPagesij.CHART_NAME+'</h2></div>';
+                            tableWithTitleHTML += '<table class="table table-bordered" style="background-color:#0D4C75;color:#CFD8E0 !important">';
+                            tableWithTitleHTML += '<thead>';
+                            tableWithTitleHTML += '<tr>';
+                            tableWithTitleHTML += '<th style="color:white">' + xAxisName + '</th>';
+                            for (let th = 0; th < legendName.length; th++) {
+                                tableWithTitleHTML += '<th style="color:white">';
+                                tableWithTitleHTML += legendName[th];
+                                tableWithTitleHTML += '</th>';
+                            }
+                            tableWithTitleHTML += '</tr>';
+                            tableWithTitleHTML += '</thead>';
+                            tableWithTitleHTML += '<tbody>';
+                            for (let row = 0; row < listXAxisData.length; row++) {
+                                tableWithTitleHTML += '<tr>'
+                                tableWithTitleHTML += '<td>' + listXAxisData[row] + '</td>';
+                                for (let column = 0; column < legendName.length; column++) {
+                                    tableWithTitleHTML += '<td>' + series[column].data[row] + '</td>';
+                                }
+                                tableWithTitleHTML += '</tr>';
+                            }
+                            tableWithTitleHTML += '</tbody>';
+                            tableWithTitleHTML += '</table>';
+                            tableWithTitleHTML += '</div>';
+                            $('#chart_' + chartsOfPagesij.PAGE_CHART_ID).html(tableWithTitleHTML);
+                            break;
+                        case 'bar-horizontal':
+                            chart.setOption({
+                                title: {
+                                    text: chartsOfPagesij.CHART_NAME,
+                                    x: 'center',
+                                    top: '3%',
+                                    textStyle: {
+                                        color: '#FFFFFF'
+                                    }
+                                },
+                                tooltip: {},
+                                legend: {
+                                    data: legendName,
+                                    bottom: '2%',
+                                },
+                                xAxis: {
+                                    type: 'value',
+                                    splitLine: {
+                                        show: false
+                                    }
+                                },
+                                yAxis: {
+                                    name: xAxisName,
+                                    type: 'category',
+                                    data: listXAxisData,
+                                    splitLine: {
+                                        show: false
+                                    }
+                                },
+                                series: series,
+                                color: ["#2194CD", "#2DB494", "#8D9ABB", "#E29857", "#a5e7f0", "#cbb0e3"],
+                            });
+                            break;
+                        case 'bar-vertical':
+                            chart.setOption({
+                                title: {
+                                    text: chartsOfPagesij.CHART_NAME,
+                                    x: 'center',
+                                    top: '3%',
+                                    textStyle: {
+                                        color: '#FFFFFF'
+                                    }
+                                },
+                                tooltip: {},
+                                legend: {
+                                    data: legendName,
+                                    bottom: '2%',
+                                },
+                                xAxis: {
+                                    name: xAxisName,
+                                    type: 'category',
+                                    data: listXAxisData,
+                                    splitLine: {
+                                        show: false
+                                    }
+                                },
+                                yAxis: {
+                                    type: 'value',
+                                    splitLine: {
+                                        show: false
+                                    }
+                                },
+                                series: series,
+                                color: ["#2194CD", "#2DB494", "#8D9ABB", "#E29857", "#a5e7f0", "#cbb0e3"],
+                            });
+                            break;
+                        case 'bar-vertical-stack':
+                            chart.setOption({
+                                title: {
+                                    text: chartsOfPagesij.CHART_NAME,
+                                    x: 'center',
+                                    top: '3%',
+                                    textStyle: {
+                                        color: '#FFFFFF'
+                                    }
+                                },
+                                tooltip: {},
+                                legend: {
+                                    data: legendName,
+                                    bottom: '2%',
+                                },
+                                xAxis: {
+                                    name: xAxisName,
+                                    type: 'category',
+                                    data: listXAxisData,
+                                    splitLine: {
+                                        show: false
+                                    }
+                                },
+                                yAxis: {
+                                    type: 'value',
+                                    splitLine: {
+                                        show: false
+                                    }
+                                },
+                                series: series,
+                                color: ["#2194CD", "#2DB494", "#8D9ABB", "#E29857", "#a5e7f0", "#cbb0e3"],
+                            });
+                            break;
+                        case 'bar-horizontal-stack':
+                            chart.setOption({
+                                title: {
+                                    text: chartsOfPagesij.CHART_NAME,
+                                    x: 'center',
+                                    top: '3%',
+                                    textStyle: {
+                                        color: '#FFFFFF'
+                                    }
+                                },
+                                tooltip: {},
+                                legend: {
+                                    data: legendName,
+                                    bottom: '2%',
+                                },
+                                xAxis: {
+                                    type: 'value',
+                                    splitLine: {
+                                        show: false
+                                    }
+                                },
+                                yAxis: {
+                                    name: xAxisName,
+                                    type: 'category',
+                                    data: listXAxisData,
+                                    splitLine: {
+                                        show: false
+                                    }
+                                },
+                                series: series,
+                                color: ["#2194CD", "#2DB494", "#8D9ABB", "#E29857", "#a5e7f0", "#cbb0e3"],
+                            });
+                            break;
+                        default: //柱状图和折线图
+                            chart.setOption({
+                                title: {
+                                    text: chartsOfPagesij.CHART_NAME,
+                                    x: 'center',
+                                    top: '3%',
+                                    textStyle: {
+                                        color: '#FFFFFF'
+                                    }
+                                },
+                                tooltip: {},
+                                legend: {
+                                    data: legendName,
+                                    bottom: '2%',
+                                },
+                                xAxis: {
+                                    name: xAxisName,
+                                    type: 'category',
+                                    data: listXAxisData,
+                                    splitLine: {
+                                        show: false
+                                    }
+                                },
+                                yAxis: {
+                                    type: 'value',
+                                    splitLine: {
+                                        show: false
+                                    }
+                                },
+                                series: series,
+                                color: ["#2194CD", "#2DB494", "#8D9ABB", "#E29857", "#a5e7f0", "#cbb0e3"],
+                            });
+                            break;
+                    }
+
+                    break;
+                default:
+                    break;
+            }
+        })
+    }
+
+    //开始切换界面
+    function engineStart() {
+        //$("#0").show();
+        console.log("gap: " + gap);
+        nextPage();
+        gap = gap == null ? 600 : gap;
+        //开始轮转页面
+        setInterval("nextPage()", gap * 1000);
+        //设置图表的刷新时间
+    }
+
+    //显示下一页
+    function nextPage() {
+        if (pageCount == pageNow + 1) {
+            pageNow = 0;
+        } else {
+            pageNow++;
+        }
+
+        $("#" + pageNow).addClass('bounceInRight');
+        $("#" + pageNow).removeClass('bounceOutLeft');
+        $("#" + pageNow).siblings().addClass('bounceOutLeft');
+        $("#" + pageNow).siblings().removeClass('bounceInRight');
+
+        $("#" + pageNow).show().siblings().hide();
+        console.log("pageNow: " + pageNow);
+    }
+
+    let linkedChart = echarts.init(document.getElementById('linkedChart'), 'westeros');
+
+    //显示弹出图表
+    function showLinkedChart(PAGE_CHART_ID) {
+        linkedChart.clear();
+
+        //获取要显示的数据
+        $.post(URL + "/Display/LinkedEcharts", {PAGE_CHART_ID: PAGE_CHART_ID}, function (data) {
+            let obj = JSON.parse(data);
+            //console.log(obj);
+            switch (obj[0]) {
+                case '1':
+                    let dic = obj[1];
+                    let listXAxisData = dic.listXAxisData;
+                    let xAxisName = dic.xAxisName;
+                    let legendName = dic.legendName;
+                    let series = dic.series;
+                    let seriesType = dic.seriesType;
+                    let pieData = dic.pieData;
+                    let title = dic.title;
+
+                    switch (seriesType) {
+                        case 'pie':
+                            linkedChart.setOption({
+                                title: {
+                                    text: title,
+                                    x: 'center',
+                                    top: '10%',
+                                    textStyle: {
+                                        color: '#FFFFFF'
+                                    }
+                                },
+                                tooltip: {
+                                    trigger: 'item',
+                                    formatter: "{a} <br/>{b} : {c}",
+                                },
+                                legend: {
+                                    orient: 'vertical',
+                                    left: '5%',
+                                    data: listXAxisData
+                                },
+                                // series: series
+                                series: [
+                                    {
+                                        name: title,
+                                        type: 'pie',
+                                        radius: '55%',
+                                        center: ['50%', '60%'],
+                                        data: pieData,
+                                        itemStyle: {
+                                            emphasis: {
+                                                shadowBlur: 10,
+                                                shadowOffsetX: 0,
+                                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                            }
+                                        }
+                                    }
+                                ],
+                                color: ["#2194CD", "#E39A56", "#8F9CBC", "#93b7e3", "#a5e7f0", "#cbb0e3"],
+                            });
+                            break;
+                        case 'table':
+                            let tableHTML = '';
+                            tableHTML += '<div style="overflow-x:auto;padding: 20px;">';
+                            tableHTML += '<table class="table table-bordered" style="background-color:#0D4C75;color:#CFD8E0 !important">';
+                            tableHTML += '<thead>';
+                            tableHTML += '<tr>';
+                            tableHTML += '<th style="color:white">' + xAxisName + '</th>';
+                            for (let th = 0; th < legendName.length; th++) {
+                                tableHTML += '<th style="color:white">';
+                                tableHTML += legendName[th];
+                                tableHTML += '</th>';
+                            }
+                            tableHTML += '</tr>';
+                            tableHTML += '</thead>';
+                            tableHTML += '<tbody>';
+                            for (let row = 0; row < listXAxisData.length; row++) {
+                                tableHTML += '<tr>'
+                                tableHTML += '<td>' + listXAxisData[row] + '</td>';
+                                for (let column = 0; column < legendName.length; column++) {
+                                    tableHTML += '<td>' + series[column].data[row] + '</td>';
+                                }
+                                tableHTML += '</tr>';
+                            }
+                            tableHTML += '</tbody>';
+                            tableHTML += '</table>';
+                            tableHTML += '</div>';
+                            $('#linkedChart').html(tableHTML);
+                            break;
+                        case 'table-with-title':
+                            let tableWithTitleHTML = '';
+                            tableWithTitleHTML += '<div style="overflow-x:auto;padding: 20px;">';
+                            tableWithTitleHTML += '<div style="text-align: center"><h1>'+title+'</h1></div>';
+                            tableWithTitleHTML += '<table class="table table-bordered" style="background-color:#0D4C75;color:#CFD8E0 !important">';
+                            tableWithTitleHTML += '<thead>';
+                            tableWithTitleHTML += '<tr>';
+                            tableWithTitleHTML += '<th style="color:white">' + xAxisName + '</th>';
+                            for (let th = 0; th < legendName.length; th++) {
+                                tableWithTitleHTML += '<th style="color:white">';
+                                tableWithTitleHTML += legendName[th];
+                                tableWithTitleHTML += '</th>';
+                            }
+                            tableWithTitleHTML += '</tr>';
+                            tableWithTitleHTML += '</thead>';
+                            tableWithTitleHTML += '<tbody>';
+                            for (let row = 0; row < listXAxisData.length; row++) {
+                                tableWithTitleHTML += '<tr>'
+                                tableWithTitleHTML += '<td>' + listXAxisData[row] + '</td>';
+                                for (let column = 0; column < legendName.length; column++) {
+                                    tableWithTitleHTML += '<td>' + series[column].data[row] + '</td>';
+                                }
+                                tableWithTitleHTML += '</tr>';
+                            }
+                            tableWithTitleHTML += '</tbody>';
+                            tableWithTitleHTML += '</table>';
+                            tableWithTitleHTML += '</div>';
+                            $('#linkedChart').html(tableWithTitleHTML);
+                            break;
+                        case 'bar-horizontal':
+                            linkedChart.setOption({
+                                title: {
+                                    text: title,
+                                    x: 'center',
+                                    top: '3%',
+                                    textStyle: {
+                                        color: '#FFFFFF'
+                                    }
+                                },
+                                tooltip: {},
+                                legend: {
+                                    data: legendName,
+                                    bottom: '2%',
+                                },
+                                xAxis: {
+                                    type: 'value',
+                                    splitLine: {
+                                        show: false
+                                    }
+                                },
+                                yAxis: {
+                                    name: xAxisName,
+                                    type: 'category',
+                                    data: listXAxisData,
+                                    splitLine: {
+                                        show: false
+                                    }
+                                },
+                                series: series,
+                                color: ["#2194CD", "#2DB494", "#8D9ABB", "#E29857", "#a5e7f0", "#cbb0e3"],
+                            });
+                            break;
+                        case 'bar-vertical':
+                            linkedChart.setOption({
+                                title: {
+                                    text: title,
+                                    x: 'center',
+                                    top: '3%',
+                                    textStyle: {
+                                        color: '#FFFFFF'
+                                    }
+                                },
+                                tooltip: {},
+                                legend: {
+                                    data: legendName,
+                                    bottom: '2%',
+                                },
+                                xAxis: {
+                                    name: xAxisName,
+                                    type: 'category',
+                                    data: listXAxisData,
+                                    splitLine: {
+                                        show: false
+                                    }
+                                },
+                                yAxis: {
+                                    type: 'value',
+                                    splitLine: {
+                                        show: false
+                                    }
+                                },
+                                series: series,
+                                color: ["#2194CD", "#2DB494", "#8D9ABB", "#E29857", "#a5e7f0", "#cbb0e3"],
+                            });
+                            break;
+                        case 'bar-vertical-stack':
+                            linkedChart.setOption({
+                                title: {
+                                    text: title,
+                                    x: 'center',
+                                    top: '3%',
+                                    textStyle: {
+                                        color: '#FFFFFF'
+                                    }
+                                },
+                                tooltip: {},
+                                legend: {
+                                    data: legendName,
+                                    bottom: '2%',
+                                },
+                                xAxis: {
+                                    name: xAxisName,
+                                    type: 'category',
+                                    data: listXAxisData,
+                                    splitLine: {
+                                        show: false
+                                    }
+                                },
+                                yAxis: {
+                                    type: 'value',
+                                    splitLine: {
+                                        show: false
+                                    }
+                                },
+                                series: series,
+                                color: ["#2194CD", "#2DB494", "#8D9ABB", "#E29857", "#a5e7f0", "#cbb0e3"],
+                            });
+                            break;
+                        case 'bar-horizontal-stack':
+                            linkedChart.setOption({
+                                title: {
+                                    text: title,
+                                    x: 'center',
+                                    top: '3%',
+                                    textStyle: {
+                                        color: '#FFFFFF'
+                                    }
+                                },
+                                tooltip: {},
+                                legend: {
+                                    data: legendName,
+                                    bottom: '2%',
+                                },
+                                xAxis: {
+                                    type: 'value',
+                                    splitLine: {
+                                        show: false
+                                    }
+                                },
+                                yAxis: {
+                                    name: xAxisName,
+                                    type: 'category',
+                                    data: listXAxisData,
+                                    splitLine: {
+                                        show: false
+                                    }
+                                },
+                                series: series,
+                                color: ["#2194CD", "#2DB494", "#8D9ABB", "#E29857", "#a5e7f0", "#cbb0e3"],
+                            });
+                            break;
+                        default: //柱状图和折线图
+                            linkedChart.setOption({
+                                title: {
+                                    text: title,
+                                    x: 'center',
+                                    top: '3%',
+                                    textStyle: {
+                                        color: '#FFFFFF'
+                                    }
+                                },
+                                tooltip: {},
+                                legend: {
+                                    data: legendName,
+                                    bottom: '2%',
+                                },
+                                xAxis: {
+                                    name: xAxisName,
+                                    type: 'category',
+                                    data: listXAxisData,
+                                    splitLine: {
+                                        show: false
+                                    }
+                                },
+                                yAxis: {
+                                    type: 'value',
+                                    splitLine: {
+                                        show: false
+                                    }
+                                },
+                                series: series,
+                                color: ["#2194CD", "#2DB494", "#8D9ABB", "#E29857", "#a5e7f0", "#cbb0e3"],
+                            });
+                            break;
+                    }
+                    $("#linkedChartModal").modal('show');
+
+                    break;
+                default:
+                    break;
+            }
+        })
+    }
+</script>
